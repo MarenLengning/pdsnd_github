@@ -6,7 +6,7 @@ import time
 CITY_DATA = { 'chicago': 'chicago.csv', 'new york city': 'new_york_city.csv', 'washington': 'washington.csv' }
 
 def get_city():
-    '''Gets data for a city the user is interested in, lowercases it and loads respective CSV.'''
+    '''Gets data for a city the user is interested in (Washington, Chicago or New York) lowercases it and loads respective CSV.'''
     city = ''
     while city.lower() not in ['chicago', 'new york', 'washington']:
         city = input('\nHello! Let\'s explore some US bikeshare data!\n'
@@ -64,7 +64,7 @@ def get_day():
     return (str(start_date), str(end_date))
 
 def common_month(df):
-    '''Analysis respective filter for the month with the most common start time and prints it.'''
+    '''Analysis respective filter for the month January to June with the most common start time and prints it.'''
     months = ['January', 'February', 'March', 'April', 'May', 'June']
     index = int(df['start_time'].dt.month.mode())
     most_common_month = months[index - 1]
