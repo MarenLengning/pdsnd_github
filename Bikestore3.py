@@ -64,7 +64,7 @@ def get_day():
     return (str(start_date), str(end_date))
 
 def common_month(df):
-    '''Analysis respective filter for the month with the most common start time and prints it.'''
+    '''Analysis respective filter for the month January to June with the most common start time and prints it.'''
     months = ['January', 'February', 'March', 'April', 'May', 'June']
     index = int(df['start_time'].dt.month.mode())
     most_common_month = months[index - 1]
